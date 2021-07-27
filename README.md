@@ -25,7 +25,7 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 
 # Installation & Configuration
 
-1. Pull the repo or Download the zip file and extract it
+1. Clone the repo `git clone git@github.com:Yousab/shoparize-distancer-task.git` or Download the zip file and extract it
 2. Run `composer install` command on the root directory to have "vendor" directory.
 3. Create .env file from `.env.example` which you can find it on the root directory.
 4. Open CMD and check if you can run `php artisan` at the root, It will list artisan commands if run successfully. If It doesn't run successfully, you can run the following command `composer update --no-dev`
