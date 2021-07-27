@@ -34,3 +34,7 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 #### Prerequisites
 - PHP >= 7.3
 - Composer
+
+#### Production Deployment
+- Autoloader Optimization `composer install --optimize-autoloader --no-dev`
+- Debug Mode, set `APP_DEBUG` in your .env file with `false`
