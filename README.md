@@ -23,7 +23,7 @@ Documentation for the framework can be found on the [Lumen website](https://lume
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-# Installation
+# Installation & Configuration
 
 1. Pull the repo or Download the zip file and extract it
 2. Run `composer install` command on the root directory to have "vendor" directory.
@@ -38,3 +38,29 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 #### Production Deployment
 - Autoloader Optimization `composer install --optimize-autoloader --no-dev`
 - Debug Mode, set `APP_DEBUG` in your .env file with `false`
+
+#### Unit Testing
+
+You can check the unit tests created for calculate_distance API endpoint by running `vendor/phpunit/phpunit/phpunit`. You should see `OK (6 tests, 16 assertions)`
+
+#### Modified Files
+- app/Helpers/CalcHelper.php
+- app/Http/Controllers/DistancerController.php
+- app/Http/Middleware/RequestValidatorMiddleware.php
+- app/Rules/DistanceUnitRule.php
+- bootstrap/app.php
+- routes/api.php
+- tests/DistancerTest.php
+
+#### Postman Collection
+
+Here is the [postman collection](https://www.getpostman.com/collections/a763f09464eb5c1e10c5) where you can import it to your postman client and find the API endpoint (Calculate Distance) with its predefined params. If you are not going to import the postman collection, you can use the curl request (if exists) and check its response. Here is the curl request:
+```
+curl -X POST \
+  http://localhost:8000/api/v1/calculate \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -H 'postman-token: 43842ce5-45de-dae8-190c-f689e6de161c' \
+  -F 'distance1=3 yards' \
+  -F 'distance2=5 meters' \
+  -F res_unit=meters
